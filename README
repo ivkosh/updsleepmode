@@ -1,0 +1,17 @@
+UPDSLEEPMODE for MacOSX (ssd hack)
+author: Ivan Koshkin <ivan@koshkin.me>
+
+installation:
+
+sudo -s
+cp com.morgoth.... /Library/LaunchDaemons
+chown root /Library/LaunchDaemons/com.morgoth....
+launchctl load /Library/LaunchDaemons/com.morgoth...
+
+copy updsleepmode.sh to some directory
+modify updsleepmode's path in plist
+
+todo: write install script
+
+todo: add more ssd hacks to readme and noatime plist
+
