@@ -4,7 +4,7 @@
 <plist version="1.0">
 	<dict>  
 		<key>Label</key>
-		<string>com.morgoth.updsleepmode.bycalendar</string>
+		<string>com.morgoth.updsleepmode.calendar</string>
 		<key>ProgramArguments</key>
 		<array> 
 			<string>/Users/morgoth/bin/updsleepmode.sh</string>
