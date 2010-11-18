@@ -1,0 +1,24 @@
+source ~/.bashrc
+
+# check disk usage percentage
+# if it is >=70% display usage
+# if it is >=80% display urgent alert
+dfout=`/bin/df -H /|/usr/bin/tail -n 1`
+percent=`echo $dfout|/usr/bin/perl -ne '/.*?(\d+)\%.*?/ && print $1'`
+if [ ${percent} -gt 69 ] ; then
+	echo
+	#echo $dfout
+	echo -e "SSD disk usage is \033[1m${percent}%\033[0m"
+	if [ ${percent} -gt 79 ] ; then
+		echo -e "!!! \033[1mFREE \033[4m$((${percent}-70))%\033[0m of space on SSD disk \033[1m\033[4mIMMEDIATELY\033[0m !!!\033[0m"
+	fi
+	echo
+fi
+
+#battery_percent=`ioreg -l | grep Capacity | tr '\n' ' | ' | awk '{printf("%d", $10/$5 * 100)}'`
+#if [ ${battery_percent} -le 15 ] ; then
+	#echo
+	#echo -e "Battery \033[1mlow\033[0m: ${battery_percent}%"
+#	~/bin/updsleepmode.sh
+#fi
+
